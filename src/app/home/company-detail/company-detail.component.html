@@ -1,0 +1,28 @@
+<app-header [headerTitle]="detailHeader" [enableBackBtn]="'home'"></app-header>
+<div>
+    <div class="card-wrapper">
+        <div class="card">
+            <div class="container">
+                <h4><b>Company Name : {{companyDetail.company}}</b></h4>
+                <div><b>Price : </b>{{companyDetail.currentPrice}}</div>
+                <div><b>Category : </b>{{companyDetail.industryType}}</div>
+                <div><b>Working Status : </b>{{companyDetail.isActive ? 'Active' : 'Inactive'}}</div>
+                <hr>
+                <p><b>Contact Details : </b></p>
+                <div><b>Address : </b>{{companyDetail.address}}</div>
+                <div><b>Phone : </b>{{companyDetail.phone}}</div>
+                <div><b>Email : </b>{{companyDetail.email}}</div>
+                <hr>
+                <div><b>About the company : </b></div>
+                <div>{{companyDetail.about}}</div>
+            </div>
+
+            <div style="width: 100%; height: 500px;">
+                <ngx-charts-line-chart [legend]="legend" [showXAxisLabel]="showXAxisLabel" [legendPosition]="legendPosition"
+                    [showYAxisLabel]="showYAxisLabel" [xAxis]="xAxis" [yAxis]="yAxis" [xAxisLabel]="xAxisLabel"
+                    [yAxisLabel]="yAxisLabel" [timeline]="timeline" [results]="chartData">
+                </ngx-charts-line-chart>
+            </div>
+        </div>
+    </div>
+</div>

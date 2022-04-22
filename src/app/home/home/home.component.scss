@@ -1,0 +1,90 @@
+.overview-card{
+    width: 50%;
+}
+
+.financial-data-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-left: 4px;
+}
+
+.card-container{
+    width: 49%; 
+    min-width: 247px!important; 
+    margin: 2px;
+}
+
+.btn-outline-secondary {
+    color: lightgray!important;
+    border-color: lightgrey!important;
+}
+
+.max-height {
+    height: 100%;
+}
+
+.search-bar-wrapper {
+    margin: 6px;
+}
+
+.calendar-icon {
+    height: 16px!important;
+}
+
+.search-box {
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+
+
+.btn:focus {
+    outline: 0;
+    box-shadow: none!important;
+}
+
+.compare-btn {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 3px;
+    padding: 0 15px;
+    border-radius: 4px;
+    color: #6200ee;
+    background: transparent;
+    line-height: 1.15;
+    font-size: 14px;
+    height: 36px;
+    word-spacing: 0px;
+    letter-spacing: .0892857143em;
+    text-decoration: none;
+    text-transform: uppercase;
+    min-width: 64px;
+    border: 1px solid #6200ee;
+    text-align: center;
+    transition: background 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    :hover {
+       background: #f4f4f4;
+    }
+
+}
+
+.margin-4 {
+    margin: 4px;
+}
+
+.row-custom {
+    margin: 4px 0px;
+    justify-content: space-between;
+}
+
+.toggle-wrapper {
+    display: flex;
+    align-items: center;
+}

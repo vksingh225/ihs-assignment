@@ -1,0 +1,25 @@
+.header-wrapper {
+    height: 52px;
+    background-color: #9689e1;
+    border-bottom: 1px solid lightgray;
+    border-style: outset;
+    text-align: center;
+    display: flex;
+}
+
+.title-text {
+    color: white;
+    font-weight: 500;
+    font-size: large;
+    margin: auto!important;
+}
+
+.back-icon-wrapper {
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    .back-icon {
+        width: 24px;
+        height: 24px;
+    }
+}

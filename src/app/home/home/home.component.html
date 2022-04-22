@@ -1,0 +1,58 @@
+<app-header [headerTitle]="homeTitle" [enableBackBtn]="'..'"></app-header>
+<div class="search-bar-wrapper">
+  <form class="row row-cols-sm-auto row-custom">
+    <div class="col-6">
+      <div class="input-group">
+        <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker
+          #d="ngbDatepicker" (ngModelChange)="checkDate(model)">
+        <button class="btn btn-outline-secondary" (click)="d.toggle();" type="button">
+          <img class=" calendar-icon" src="../../../assets/icon/calendar.png">
+        </button>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div class="input-group max-height">
+        <input class="search-box" placeholder="Search by name/industry" name="input-search" type="text"
+          [(ngModel)]="searchText" (keyup)="searchTextChange(searchText)">
+      </div>
+    </div>
+  </form>
+
+  <div class="row row-cols-sm-auto row-custom">
+    <div class="col-6">
+      <div class="max-height compare-btn" (click)="compareRecords()">
+        Compare {{checkBoxArray.length}}
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="toggle-wrapper max-height">
+        <input class="toggle" type="checkbox" (click)="onChartToggle($event)" />
+        <span class="margin-left-4">Chart view</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="financial-data-wrapper">
+  <ng-container *ngIf="companyData">
+    <div *ngFor="let data of filteredList ; trackBy:trackId" class="card-container">
+      <ng-container *ngIf="!chartToggle">
+        <app-overview-card class="overview-card" [cardData]="data" [goToUrl]="'detail'"
+          (checkboxChange)="getCheckboxEvent($event)" [checkLength]="checkBoxArray.length"></app-overview-card>
+      </ng-container>
+
+      <ng-container *ngIf="chartToggle">
+        <app-chart-card class="overview-card" [cardData]="data" [goToUrl]="'detail'"
+          (checkboxChange)="getCheckboxEvent($event)" [checkLength]="checkBoxArray.length"></app-chart-card>
+      </ng-container>
+
+    </div>
+
+  </ng-container>
+</div>
+
+<div class="financial-data-wrapper" *ngIf="filteredList.length === 0">
+  No data, please change the search criteria.
+</div>
